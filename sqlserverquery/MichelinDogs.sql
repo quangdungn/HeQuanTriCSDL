@@ -1,4 +1,4 @@
-﻿/*********************************************************************
+/*********************************************************************
   Tên cơ sở dữ liệu	: MichelinDogs
   Mục đích			: Đây là cơ sở dữ liệu của một sàn 
 					  thương mại điện tử
@@ -79,11 +79,9 @@ GO
 -- ==============================================================================================================
 -- 1.	: CategoryID	: Mã danh mục		: INT			: NOT NULL	: IDENTITY(1,1)		: PRIMARY KEY
 -- 2.	: CategoryName	: Tên danh mục		: NVARCHAR(200) : NOT NULL	:					:
--- 3.	: ParentID		: Mã danh mục cha	: INT			: NULL		:					: FOREIGN KEY
--- 4.	: CreatedAt		: Ngày tạo			: DATETIME		: NOT NULL	: DEFAULT GETDATE()	:
--- 5.	: UpdatedAt		: Ngày cập nhật		: DATETIME		: NULL		:					:
+-- 3.	: CreatedAt		: Ngày tạo			: DATETIME		: NOT NULL	: DEFAULT GETDATE()	:
+-- 4.	: UpdatedAt		: Ngày cập nhật		: DATETIME		: NULL		:					:
 -- ==============================================================================================================
-/* 4. Bảng Categories (self-ref) => TẮT cascade */
 CREATE TABLE Categories
 (
     CategoryID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
