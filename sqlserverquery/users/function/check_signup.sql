@@ -1,0 +1,8 @@
+CREATE FUNCTION IsEmailExists (@Email NVARCHAR(100))
+RETURNS BIT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Users WHERE Email = @Email)
+        RETURN 1;
+    RETURN 0;
+END;
