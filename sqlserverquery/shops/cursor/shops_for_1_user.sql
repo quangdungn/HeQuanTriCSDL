@@ -16,7 +16,7 @@ BEGIN
     FROM Shops
     WHERE UserID = @UserID;
 
-    PRINT 'User: ' + @FullName + ' owns ' + CAST(@ShopCount AS NVARCHAR) + ' shops.';
+    PRINT 'Người dùng: ' + @FullName + ' sở hữu ' + CAST(@ShopCount AS NVARCHAR) + ' cửa hàng.';
 
     FETCH NEXT FROM UserCursor INTO @UserID, @FullName;
 END;

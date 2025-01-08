@@ -5,9 +5,9 @@ SELECT
     u.Email,
     u.PhoneNumber,
     CASE 
-        WHEN u.UserType = 0 THEN 'Regular User'
-        WHEN u.UserType = 1 THEN 'Shop Owner'
-        ELSE 'Unknown'
+        WHEN u.UserType = 0 THEN 'Người dùng thường xuyên'
+        WHEN u.UserType = 1 THEN 'Chủ cửa hàng'
+        ELSE 'Không xác định'
     END AS UserType,
     u.CreatedAt AS UserCreatedAt,
     u.UpdatedAt AS UserUpdatedAt

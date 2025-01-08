@@ -1,14 +1,18 @@
-CREATE PROCEDURE sp_LoginUser
+CREATE PROCEDURE SP_UserLogin
     @Email NVARCHAR(100),
-    @Password VARCHAR(200)
+    @Password NVARCHAR(200)
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    IF EXISTS (SELECT 1 FROM Users WHERE Email = @Email AND [Password] = @Password)
-        SELECT 'Đăng nhập thành công' AS Message, UserID, FullName, Email, UserType
+    IF dbo.FN_ValidateUserCredentials(@Email, @Password) = 1
+    BEGIN
+        SELECT UserID, FullName, Email, UserType
         FROM Users
         WHERE Email = @Email;
+
+        PRINT 'Đăng nhập thành công.';
+    END
     ELSE
-        SELECT 'Sai tài khoản hoặc mật khẩu' AS Message;
+    BEGIN
+        PRINT 'Email hoặc mật khẩu không chính xác.';
+    END;
 END;

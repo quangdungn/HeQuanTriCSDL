@@ -4,11 +4,10 @@ AS
 BEGIN
     DECLARE @TotalShops INT;
 
-    -- Kiểm tra nếu User là chủ shop, đếm số lượng cửa hàng
     IF EXISTS (
         SELECT 1 
         FROM Users 
-        WHERE UserID = @UserID AND UserType = 1 -- Chỉ kiểm tra chủ shop
+        WHERE UserID = @UserID AND UserType = 1
     )
     BEGIN
         SELECT @TotalShops = COUNT(*)
@@ -17,7 +16,6 @@ BEGIN
     END
     ELSE
     BEGIN
-        -- Nếu không phải chủ shop, trả về 0
         SET @TotalShops = 0;
     END;
 
