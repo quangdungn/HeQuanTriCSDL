@@ -1,3 +1,4 @@
+--Kiẻm tra email và password của người dùng khi đăng nhập
 CREATE FUNCTION FN_ValidateUserCredentials (
     @Email NVARCHAR(100),
     @Password NVARCHAR(200)

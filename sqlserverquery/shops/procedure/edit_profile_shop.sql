@@ -1,3 +1,4 @@
+-- Chỉnh sửa thông tin shop
 CREATE PROCEDURE UpdateShopInfo
     @ShopID INT,
     @ShopName NVARCHAR(200),

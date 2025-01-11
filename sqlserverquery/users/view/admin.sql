@@ -1,3 +1,4 @@
+-- In ra danh sách người dùng dành cho admin
 CREATE VIEW AdminUserList AS
 SELECT 
     u.UserID,

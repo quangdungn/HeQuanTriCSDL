@@ -1,3 +1,4 @@
+-- Chỉnh sửa thông tin tài khoản
 CREATE PROCEDURE UpdateUserInfo
     @UserID INT,
     @FullName NVARCHAR(100),
@@ -16,3 +17,4 @@ BEGIN
 
     PRINT 'Chỉnh sửa thông tin tài khoản thành công!';
 END;
+

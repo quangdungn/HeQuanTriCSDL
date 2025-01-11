@@ -1,3 +1,4 @@
+-- Đăng ký tài khoản
 CREATE PROCEDURE SP_UserLogin
     @Email NVARCHAR(100),
     @Password NVARCHAR(200)

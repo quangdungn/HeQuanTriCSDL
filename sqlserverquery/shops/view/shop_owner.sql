@@ -1,3 +1,4 @@
+-- In ra thông tin của các cửa hàng và chủ cửa hàng
 CREATE VIEW ShopInfoByOwners AS
 SELECT 
     s.ShopID,

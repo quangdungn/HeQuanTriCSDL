@@ -105,9 +105,13 @@
                 <button class="btn btn-light">Tìm kiếm</button>
             </div>
             <div class="user-menu">                
-                <button class="btn btn-warning">Giỏ hàng</button>
-                <button class="btn btn-light">Đăng nhập</button>
-                <button class="btn btn-light">Đăng ký</button>
+                @if (auth()->check())
+                    <a href="{{ route('cart') }}" class="btn btn-warning">Giỏ hàng</a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-warning">Giỏ hàng</a>
+                @endif
+                <button class="btn btn-light" onclick="window.location.href='{{ route('login') }}'">Đăng nhập</button>
+                <button class="btn btn-light" onclick="window.location.href='{{ route('signup') }}'">Đăng ký</button>
             </div>
         </div>
     </header>
@@ -191,7 +195,7 @@
     </section>
 
     <footer class="bg-dark text-white py-3 text-center">
-        <p>&copy; Copyright by ChatGPT</p>
+        <p>&copy; Copyright by </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
